@@ -15,18 +15,31 @@ try {
 //SEPARATE ALL THE WORDS IN A ARRAY
 splitString = data.split("\n");
 let listaAdj = [];
+let listaV = [];
+let listaSubM = [];
+let listaSubF = [];
 
-//GET JUST THE ADJ
+//GET JUST THE ADJ / VERB / SUBS FEM / SUBS MASC
 for(i = 0; i < splitString.length; i = i + 2){
-    if (splitString[i].startsWith('_*') && splitString[i+1].startsWith('_adj')) {
-        let retorno = splitString[i];
-        retorno = retorno.replace('*,', '');
-        retorno = retorno.replace('_*', '');
-        if(retorno.endsWith(')')){
-            retorno = retorno.substr(0, retorno.search(' '));
-        }
-        listaAdj[listaAdj.length] = retorno;
-    }
+	if(splitString[i].startsWith('_*')){
+		let retorno = splitString[i];
+		retorno = retorno.replace('_*', '');
+		retorno = retorno.substr(0, retorno.search(","));
+		retorno = retorno.replace('*', '');
+		if (splitString[i+1].startsWith('_adj')) {
+			listaAdj[listaAdj.length] = retorno;
+		}
+		if(splitString[i+1].startsWith('_v.')){
+			listaV[listaV.length] = retorno;
+		}
+		if(splitString[i+1].startsWith('_f.')){
+			listaSubM[listaSubM.length] = retorno;
+		}
+		if(splitString[i+1].startsWith('_m.')){
+			listaSubF[listaSubF.length] = retorno;
+		}
+	}
+
 }
 
 let sufixoOso = [];
@@ -73,4 +86,7 @@ ptAdjVocab = {
     'sufixoOso': {'total': sufixoOso.length, 'average': sufixoOsoAverage}
 }
 
+console.log(listaV.length);
+console.log(listaSubM.length);
+console.log(listaSubF.length);
 console.log(ptAdjVocab);
