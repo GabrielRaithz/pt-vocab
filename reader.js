@@ -39,7 +39,6 @@ for(i = 0; i < splitString.length; i = i + 2){
 			listaSubF[listaSubF.length] = retorno;
 		}
 	}
-
 }
 
 let sufixoOso = [];
@@ -68,8 +67,10 @@ for( let i = 0; i < listaAdj.length; i++){
     }
 }
 
+let totalWords = listaAdj.length + listaSubF.length + listaSubM.length + listaV.length;
+
 //CALC &
-let adjAverage = (100 / splitString.length) * listaAdj.length;
+let adjAverage = (100 / totalWords) * listaAdj.length;
 let sufixoAnteAverage = (100 / listaAdj.length) * sufixoAnte.length
 let sufixoAlAverage = (100 / listaAdj.length) * sufixoAl.length;
 let sufixoAdoAverage = (100 / listaAdj.length) * sufixoAdo.length;
@@ -77,7 +78,7 @@ let sufixoVelAverage = (100 / listaAdj.length) * sufixoVel.length;
 let sufixoOsoAverage = (100 / listaAdj.length) * sufixoOso.length;
 
 ptAdjVocab = {
-    'totalPalavras': {'total': splitString.length, 'average': 'undefined'},
+    'totalPalavras': {'total': totalWords, 'average': 'undefined'},
     'totalAdj': {'total': listaAdj.length, 'average': adjAverage},
     'sufixoAnde': {'total': sufixoAnte.length, 'average': sufixoAnteAverage},
     'sufixoAl': {'total': sufixoAl.length, 'average': sufixoAlAverage},
