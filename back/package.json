@@ -13,6 +13,8 @@
     "prod": "tsc && node ./build/app.js"
   },
   "dependencies": {
+    "@types/cors": "^2.8.6",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "ts-node-dev": "^1.0.0-pre.51"
   }

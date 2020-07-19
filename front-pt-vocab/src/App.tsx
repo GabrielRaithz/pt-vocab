@@ -1,9 +1,16 @@
 import React from 'react';
-import PieChart from './pages/Chart';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import GlobalStyle from './pages/global';
+import Routes from './pages/Routes';
+
 function App() {
   return (
     <div className="App" >
-      <PieChart />
+      <Header />
+      <Routes />
+      <Footer />
+      <GlobalStyle />
     </div>
   );
 }

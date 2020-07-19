@@ -21,6 +21,7 @@ interface todos {
         total: number;
         totalSubstantivo: {
             total: number;
+            average: number;
             totalsubstantivoFeminino: {
                 total: number;
             };
@@ -137,6 +138,7 @@ class PtVocab {
 
         const adjetivoAverage = (100 / totalWords) * adjetivoLength;
         const verboAverage = (100 / totalWords) * verboLength;
+        const substantivoAverage = (100 / totalWords) * totalSubstantivo;
 
         let sufixoAnteAverage = (100 / adjetivoLength) * sufixoAnte.length
         let sufixoAlAverage = (100 / adjetivoLength) * sufixoAl.length;
@@ -149,6 +151,7 @@ class PtVocab {
                 total: totalWords,
                 totalSubstantivo: {
                     total: totalSubstantivo,
+                    average: substantivoAverage,
                     totalsubstantivoFeminino: {
                         total: substantivoFemininoLength,
                         average: substantivoFemininoAverage
