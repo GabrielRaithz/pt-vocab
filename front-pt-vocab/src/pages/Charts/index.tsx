@@ -69,22 +69,26 @@ const App: React.FC = () => {
             {
                 label: 'Rainfall',
                 backgroundColor: [
-                    '#B21F00',
-                    '#C9DE00',
-                    '#2FDE00'
+                    '#992200',
+                    '#fcb000',
+                    '#1e5403'
                 ],
                 hoverBackgroundColor: [
-                    '#501800',
-                    '#4B5000',
-                    '#175000'
+                    '#420e01',
+                    '#966f00',
+                    '#0b1f01'
                 ],
                 data: [
-                    !!data.total && Number(data.total.totalAdjetivo.average.toFixed(2)),
-                    !!data.total && Number(data.total.totalVerbo.average.toFixed(2)),
-                    !!data.total && Number(data.total.totalSubstantivo.average.toFixed(2)),
+                    !!data.total && format(data.total.totalAdjetivo.average),
+                    !!data.total && format(data.total.totalVerbo.average),
+                    !!data.total && format(data.total.totalSubstantivo.average),
                 ]
             }
         ]
+    }
+
+    function format(num: number): number {
+        return parseFloat(num.toFixed(2));
     }
 
     return (

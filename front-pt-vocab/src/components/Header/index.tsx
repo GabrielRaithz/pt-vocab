@@ -3,8 +3,8 @@ import { Container } from './styles';
 
 const Header: React.FC = () => (
     <Container>
-        <a href="/">home</a>
-        <a href="/about">about</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
     </Container>
 )
 
